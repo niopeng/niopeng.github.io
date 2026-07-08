@@ -202,7 +202,7 @@
         universe, and I'm happiest out in nature. I'm always open for a chat, so feel free to reach out.</p>
       </div>
       <nav class="links">
-        <a href="mailto:shichong_peng@sfu.ca">Email</a><span class="sep">/</span>
+        <a href="#" data-email>Email</a><span class="sep">/</span>
         <a href="https://scholar.google.com/citations?user=xdKKCUAAAAAJ&hl=en">Scholar</a><span class="sep">/</span>
         <a href="https://github.com/niopeng">GitHub</a><span class="sep">/</span>
         <a href="https://www.linkedin.com/in/shichong-peng-379b45a5/">LinkedIn</a>
@@ -225,7 +225,6 @@
 
   <footer class="reveal" style="animation-delay:.24s">
     <span>Shichong (Nio) Peng</span>
-    <span><a href="mailto:shichong_peng@sfu.ca">shichong_peng@sfu.ca</a></span>
   </footer>
 
 </div>
@@ -363,6 +362,14 @@
       </div>
     </article>`;
   }).join("");
+
+  /* Email assembled at runtime so the address is not in the page source (anti-harvest). */
+  (function(){
+    const user = "shichong_peng", domain = "sfu.ca";
+    document.querySelectorAll("[data-email]").forEach(el => {
+      el.href = "mailto:" + user + "@" + domain;
+    });
+  })();
 </script>
 </body>
 </html>
