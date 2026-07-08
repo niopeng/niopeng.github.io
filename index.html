@@ -13,18 +13,18 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Instrument+Sans:ital,wght@0,400..600;1,400..500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Instrument+Sans:ital,wght@0,400..600;1,400..500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --paper:   #f6f2ea;
-    --paper-2: #efe9dd;
-    --ink:     #1e1c18;
-    --muted:   #6d675d;
-    --faint:   #9a938680;
-    --line:    #ddd5c6;
-    --accent:  #2f6b5e;   /* deep teal-green */
-    --accent-d:#234f45;
+    --paper:   #ffffff;
+    --paper-2: #f4f6f6;
+    --ink:     #17181a;
+    --muted:   #63676b;
+    --faint:   #b3b7ba;
+    --line:    #e7e8ea;
+    --accent:  #1f7a68;   /* deep teal-green */
+    --accent-d:#155a4c;
     --award:   #a8611f;   /* muted amber for badges */
     --maxw: 760px;
   }
@@ -33,9 +33,7 @@
   html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    background:
-      radial-gradient(1200px 600px at 75% -10%, #fbf8f2 0%, transparent 60%),
-      var(--paper);
+    background: var(--paper);
     color: var(--ink);
     font-family: "Instrument Sans", system-ui, sans-serif;
     font-size: 17px;
@@ -60,17 +58,16 @@
   @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
 
   /* ---- header / intro ---- */
-  .hero { display: grid; grid-template-columns: 1fr 150px; gap: 34px; align-items: start; }
+  .hero { display: grid; grid-template-columns: 1fr 200px; gap: 38px; align-items: start; }
   .name {
-    font-family: "Fraunces", Georgia, serif;
-    font-optical-sizing: auto;
-    font-weight: 560;
-    font-size: clamp(2.5rem, 6vw, 3.4rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    margin: 0 0 .35em;
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 6vw, 3.3rem);
+    line-height: 1.03;
+    letter-spacing: -0.03em;
+    margin: 0 0 .38em;
   }
-  .name .alt { color: var(--muted); font-style: italic; font-weight: 460; }
+  .name .alt { color: var(--muted); font-weight: 500; }
   .role {
     font-family: "IBM Plex Mono", monospace;
     font-size: .74rem;
@@ -83,10 +80,10 @@
   .bio strong { font-weight: 600; }
 
   .portrait {
-    width: 150px; height: 178px; object-fit: cover;
-    border-radius: 4px;
-    filter: grayscale(18%) contrast(1.02);
-    box-shadow: 0 1px 0 var(--line), 0 18px 34px -22px rgba(30,28,24,.55);
+    width: 200px; height: 240px; object-fit: cover;
+    border-radius: 5px;
+    filter: grayscale(12%) contrast(1.02);
+    box-shadow: 0 1px 0 var(--line), 0 20px 38px -24px rgba(20,22,26,.5);
   }
 
   .links {
@@ -143,7 +140,7 @@
   }
   .pub .thumb.ph {
     display: flex; align-items: center; justify-content: center;
-    font-family: "Fraunces", serif; font-style: italic; color: var(--faint); font-size: 1.4rem;
+    color: var(--faint); font-size: 1.3rem;
   }
   .pub-title { font-weight: 600; line-height: 1.35; margin: 0 0 3px; }
   .pub-authors { color: var(--muted); font-size: .92rem; margin: 0 0 6px; }
@@ -172,7 +169,7 @@
   @media (max-width: 620px) {
     .wrap { padding: 44px 20px 72px; }
     .hero { grid-template-columns: 1fr; gap: 22px; }
-    .portrait { width: 118px; height: 140px; }
+    .portrait { width: 150px; height: 180px; }
     .news li { grid-template-columns: 1fr; gap: 2px; }
     .news .when { padding-top: 0; }
     .pub { grid-template-columns: 1fr; }
@@ -201,13 +198,12 @@
       </div>
       <nav class="links">
         <a href="mailto:shichong_peng@sfu.ca">Email</a><span class="sep">/</span>
-        <a href="assets/Shichong_Peng_CV.pdf">CV</a><span class="sep">/</span>
         <a href="https://scholar.google.com/citations?user=xdKKCUAAAAAJ&hl=en">Scholar</a><span class="sep">/</span>
         <a href="https://github.com/niopeng">GitHub</a><span class="sep">/</span>
         <a href="https://www.linkedin.com/in/shichong-peng-379b45a5/">LinkedIn</a>
       </nav>
     </div>
-    <img class="portrait" src="assets/img/profile.jpg" alt="Shichong (Nio) Peng">
+    <img class="portrait" src="assets/img/profile.jpeg" alt="Shichong (Nio) Peng">
   </header>
 
   <!-- ============ NEWS ============ -->
@@ -224,7 +220,7 @@
 
   <footer class="reveal" style="animation-delay:.24s">
     <span>Shichong (Nio) Peng</span>
-    <span>Last updated Jul 2026</span>
+    <span><a href="mailto:shichong_peng@sfu.ca">shichong_peng@sfu.ca</a></span>
   </footer>
 
 </div>
@@ -244,36 +240,40 @@
   const ME = "Shichong Peng";
 
   const NEWS = [
-    ["Jun 2026", `<b>RigPAPR</b> submitted to NeurIPS 2026.`],
-    ["May 2026", `<b>Latent Dynamics for Full Body Avatar Animation</b> submitted to SIGGRAPH Asia 2026 — work from my internship with Meta Codec Avatars.`],
-    ["2026",     `<b>PAPR Up-close</b> accepted to 3DV 2026.`],
-    ["Aug 2025", `Wrapped up a Research Scientist internship at <b>Meta Reality Labs</b> (Codec Avatars).`],
-    ["Jul 2024", `<b>PAPR in Motion</b> selected as a <b>CVPR 2024 Highlight</b>; <b>RS-IMLE</b> accepted to ECCV 2024.`],
-    ["Sep 2023", `<b>PAPR</b> selected as a <b>NeurIPS 2023 Spotlight</b>.`],
+    ["2026", `Two co-authored papers accepted to <b>ECCV 2026</b>.`],
+    ["2026", `<b>PAPR Up-close</b> accepted to <b>3DV 2026</b> — congrats to lead author Yanshu Zhang.`],
+    ["2025", `Completed a Research Scientist internship at <b>Meta Reality Labs</b> (Codec Avatars).`],
+    ["2024", `<b>PAPR in Motion</b> selected as a <b>CVPR 2024 Highlight</b>.`],
+    ["2023", `<b>PAPR</b> selected as a <b>NeurIPS 2023 Spotlight</b>.`],
   ];
 
   const PUBS = [
     {
-      title: "Latent Dynamics for Full Body Avatar Animation",
-      authors: [ME,"Chengxiang Yin","Fei Jiang","Zhongshi Jiang","Lingchen Yang","Qingyang Tan","Amin Jourabloo","Jason Saragih","Ke Li","Christian Häne"],
-      note: "Meta Codec Avatars",
-      venue: "In submission, SIGGRAPH Asia 2026",
-      badge: "In submission", badgeSub: true,
-      thumb: "",
-      links: [["Paper","https://arxiv.org/abs/2605.21478"]],
-    },
-    {
       title: "RigPAPR: Rig-Based Animation of Static Neural Point Clouds from a Fixed-Viewpoint Video",
       authors: [ME,"Yanshu Zhang","Ke Li"],
-      venue: "In submission, NeurIPS 2026",
-      badge: "In submission", badgeSub: true,
+      venue: "Preprint, 2026",
+      badge: "Preprint", badgeSub: true,
       links: [["Paper","https://arxiv.org/abs/2606.06685"]],
     },
     {
       title: "PAPR Up-close: Close-up Neural Point Rendering without Holes",
       authors: ["Yanshu Zhang","Chirag Vashist",ME,"Ke Li"],
       venue: "3DV 2026",
-      links: [],
+      links: [["OpenReview","https://openreview.net/forum?id=dkyAX6jVJs"]],
+    },
+    // TODO: ECCV 2026 paper #1 — add the real title and full author list (you are 2nd author)
+    {
+      title: "ECCV 2026 paper — title TBD",
+      authors: ["First Author",ME,"Ke Li"],
+      venue: "ECCV 2026",
+      links: [["OpenReview","https://openreview.net/forum?id=p9U6bsNh0p"]],
+    },
+    // TODO: ECCV 2026 paper #2 — add the real title and full author list (you are 2nd author)
+    {
+      title: "ECCV 2026 paper — title TBD",
+      authors: ["First Author",ME,"Ke Li"],
+      venue: "ECCV 2026",
+      links: [["OpenReview","https://openreview.net/forum?id=Dm0U9v7UPO"]],
     },
     {
       title: "PAPR in Motion: Seamless Point-level 3D Scene Interpolation",
