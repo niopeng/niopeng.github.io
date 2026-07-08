@@ -146,8 +146,8 @@
   .pub-authors { color: var(--muted); font-size: .92rem; margin: 0 0 6px; }
   .pub-authors .me { color: var(--ink); font-weight: 600; }
   .pub-venue {
-    font-family: "IBM Plex Mono", monospace; font-size: .74rem;
-    letter-spacing: .04em; color: var(--muted);
+    font-family: "IBM Plex Mono", monospace; font-size: .76rem; font-weight: 500;
+    letter-spacing: .03em; color: #3a3d42;
   }
   .badge {
     display: inline-block; font-family: "IBM Plex Mono", monospace;
@@ -186,17 +186,18 @@
       <h1 class="name">Shichong <span class="alt">(Nio)</span> Peng</h1>
       <p class="role">PhD Candidate · 3D Vision &amp; Neural Rendering</p>
       <div class="bio">
-        <p>I build <strong>3D deep learning systems and neural renderers</strong>. My models reconstruct
-        explicit 3D structure — neural point clouds and 3D Gaussians — from real images, then predict how
-        it moves and deforms over time. What I care about is 3D that is both <strong>photorealistic and
-        editable</strong>: something you can render, animate, rig, and control, rather than just a
-        rendered video.</p>
+        <p>I build <strong>3D deep learning systems and neural renderers</strong>. My models start from
+        real images, reconstruct explicit 3D structure such as neural point clouds and 3D Gaussians, and
+        then predict how that structure moves and deforms over time. What I really care about is making 3D
+        that is both <strong>photorealistic and editable</strong>: something you can render, animate, rig,
+        and control, not just a video you play back.</p>
         <p>I'm a PhD candidate at <strong>Simon Fraser University</strong>, advised by
-        <a href="https://www.sfu.ca/~keli/">Ke Li</a>, finishing in 2026. Most recently I was a Research
-        Scientist Intern at <strong>Meta Reality Labs</strong> (Codec Avatars), where I built a
-        transformer-based dynamics model that makes loose clothing move naturally on full-body photoreal
-        avatars. Earlier in my PhD I worked on neural rendering (PAPR) and the IMLE family of generative
-        models. Most people call me Nio, and I'm on the research job market for 2026.</p>
+        <a href="https://www.sfu.ca/~keli/">Ke Li</a>, and I expect to finish in 2026. Most recently I was
+        a Research Scientist Intern at <strong>Meta Reality Labs</strong> (Codec Avatars), where I built a
+        transformer-based decoder and a learned dynamics model that make loose clothing move naturally on
+        full-body photoreal avatars. Earlier in my PhD I worked on neural rendering (PAPR) and on the IMLE
+        family of generative models. Most people call me Nio. I'm on the research job market for 2026, and
+        I always enjoy meeting people who care about this kind of work, so please feel free to say hello.</p>
       </div>
       <nav class="links">
         <a href="mailto:shichong_peng@sfu.ca">Email</a><span class="sep">/</span>
@@ -242,9 +243,9 @@
   const ME = "Shichong Peng";
 
   const NEWS = [
-    ["Jul 2026", `Two co-authored papers accepted to <b>ECCV 2026</b> — congrats to Alireza Moazeni and Yanshu Zhang for leading them!`],
+    ["Jul 2026", `Two co-authored papers accepted to <b>ECCV 2026</b>. Congrats to Alireza Moazeni and Yanshu Zhang for leading them!`],
     ["Dec 2025", `Completed a Research Scientist internship at <b>Meta Reality Labs</b> (Codec Avatars).`],
-    ["Oct 2025", `<b>PAPR Up-close</b> accepted to <b>3DV 2026</b> — congrats to Yanshu Zhang for leading it!`],
+    ["Oct 2025", `<b>PAPR Up-close</b> accepted to <b>3DV 2026</b>. Congrats to Yanshu Zhang for leading it!`],
     ["Apr 2024", `<b>PAPR in Motion</b> selected as a <b>CVPR 2024 Highlight</b>.`],
     ["Sep 2023", `<b>PAPR</b> selected as a <b>NeurIPS 2023 Spotlight</b>.`],
   ];
@@ -255,18 +256,21 @@
       authors: [ME,"Yanshu Zhang","Ke Li"],
       venue: "Preprint, 2026",
       badge: "Preprint", badgeSub: true,
+      thumb: "assets/img/papers/rigpapr.png",
       links: [["Paper","https://arxiv.org/abs/2606.06685"]],
     },
     {
       title: "Tackling Misattribution in 3D Intrinsic Decomposition via Proximity Attention Point Rendering",
       authors: ["Alireza Moazeni",ME,"Yanshu Zhang","Chirag Vashist","Ke Li"],
       venue: "ECCV 2026",
+      thumb: "assets/img/papers/intrinsic_papr.png",
       links: [["OpenReview","https://openreview.net/forum?id=p9U6bsNh0p"]],
     },
     {
       title: "P-CORE: Self-Supervised Surface Consistency for Point-Based Neural Editing",
       authors: ["Yanshu Zhang",ME,"Mehran Aghabozorgi","Alireza Moazeni","Ke Li"],
       venue: "ECCV 2026",
+      thumb: "assets/img/papers/pcore.png",
       links: [["OpenReview","https://openreview.net/forum?id=Dm0U9v7UPO"]],
     },
     {
@@ -280,7 +284,7 @@
       authors: [ME,"Yanshu Zhang","Ke Li"],
       venue: "CVPR 2024",
       badge: "Highlight",
-      thumb: "assets/img/papers/papr-in-motion.jpg",
+      thumb: "assets/img/papers/papr-in-motion.png",
       links: [["Paper","https://arxiv.org/abs/2406.05533"],["Project","https://niopeng.github.io/PAPR-in-Motion/"]],
     },
     {
@@ -288,26 +292,28 @@
       authors: ["Yanshu Zhang*",ME+"*","Alireza Moazeni","Ke Li"],
       venue: "NeurIPS 2023",
       badge: "Spotlight",
-      thumb: "assets/img/papers/papr.jpg",
+      thumb: "assets/img/papers/papr_teaser.jpg",
       links: [["Paper","https://arxiv.org/abs/2307.11086"],["Project","https://zvict.github.io/papr/"]],
     },
     {
       title: "Rejection Sampling IMLE: Designing Priors for Better Few-Shot Image Synthesis",
       authors: ["Chirag Vashist",ME,"Ke Li"],
       venue: "ECCV 2024",
+      thumb: "assets/img/papers/rs-imle.png",
       links: [["Paper","https://arxiv.org/abs/2409.17439"],["Project","https://serchirag.github.io/rs-imle/"]],
     },
     {
       title: "Adaptive IMLE for Few-shot Pretraining-free Generative Modelling",
       authors: ["Mehran Aghabozorgi",ME,"Ke Li"],
       venue: "ICML 2023",
-      links: [["Paper","https://openreview.net/pdf?id=CNq0JvrDfw"]],
+      thumb: "assets/img/papers/ada-imle.png",
+      links: [["Paper","https://openreview.net/pdf?id=CNq0JvrDfw"],["Project","https://mehranagh20.github.io/AdaIMLE/"]],
     },
     {
       title: "CHIMLE: Conditional Hierarchical IMLE for Multimodal Conditional Image Synthesis",
       authors: [ME,"Alireza Moazeni","Ke Li"],
       venue: "NeurIPS 2022",
-      thumb: "assets/img/papers/chimle.jpg",
+      thumb: "assets/img/papers/chimle.png",
       links: [["Paper","https://arxiv.org/abs/2211.14286"],["Project","https://niopeng.github.io/CHIMLE/"]],
     },
     {
@@ -315,6 +321,7 @@
       authors: ["Ke Li*",ME+"*","Tianhao Zhang*","Jitendra Malik"],
       note: "* equal contribution",
       venue: "IJCV 2020",
+      thumb: "assets/img/papers/cimle.jpg",
       links: [["Paper","https://arxiv.org/abs/2004.03590"]],
     },
   ];
