@@ -13,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Instrument+Sans:ital,wght@0,400..600;1,400..500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700;800&family=Instrument+Sans:ital,wght@0,400..600;1,400..500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -26,7 +26,7 @@
     --accent:  #1f7a68;   /* deep teal-green */
     --accent-d:#155a4c;
     --award:   #a8611f;   /* muted amber for badges */
-    --maxw: 760px;
+    --maxw: 820px;
   }
 
   * { box-sizing: border-box; }
@@ -58,13 +58,13 @@
   @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
 
   /* ---- header / intro ---- */
-  .hero { display: grid; grid-template-columns: 1fr 200px; gap: 38px; align-items: start; }
+  .hero { display: grid; grid-template-columns: 1fr 224px; gap: 40px; align-items: start; }
   .name {
-    font-family: "Hanken Grotesk", system-ui, sans-serif;
-    font-weight: 800;
+    font-family: "Schibsted Grotesk", system-ui, sans-serif;
+    font-weight: 700;
     font-size: clamp(2.4rem, 6vw, 3.3rem);
     line-height: 1.03;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.022em;
     margin: 0 0 .38em;
   }
   .name .alt { color: var(--muted); font-weight: 500; }
@@ -80,7 +80,7 @@
   .bio strong { font-weight: 600; }
 
   .portrait {
-    width: 200px; height: 240px; object-fit: cover;
+    width: 224px; height: 268px; object-fit: cover;
     border-radius: 5px;
     filter: grayscale(12%) contrast(1.02);
     box-shadow: 0 1px 0 var(--line), 0 20px 38px -24px rgba(20,22,26,.5);
@@ -151,11 +151,11 @@
   }
   .badge {
     display: inline-block; font-family: "IBM Plex Mono", monospace;
-    font-size: .66rem; letter-spacing: .06em; text-transform: uppercase;
-    color: var(--award); border: 1px solid color-mix(in srgb, var(--award) 40%, transparent);
-    border-radius: 3px; padding: 1px 6px; margin-left: 6px; vertical-align: 1px;
+    font-size: .67rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+    color: #fff; background: var(--award); border: 1px solid var(--award);
+    border-radius: 3px; padding: 1.5px 7px; margin-left: 7px; vertical-align: 1.5px;
   }
-  .badge.sub { color: var(--muted); border-color: var(--line); }
+  .badge.sub { color: var(--muted); background: transparent; border-color: var(--line); font-weight: 400; }
   .pub-links { margin-top: 5px; font-family: "IBM Plex Mono", monospace; font-size: .76rem; }
   .pub-links a { margin-right: 12px; white-space: nowrap; }
 
@@ -169,7 +169,7 @@
   @media (max-width: 620px) {
     .wrap { padding: 44px 20px 72px; }
     .hero { grid-template-columns: 1fr; gap: 22px; }
-    .portrait { width: 150px; height: 180px; }
+    .portrait { width: 164px; height: 196px; }
     .news li { grid-template-columns: 1fr; gap: 2px; }
     .news .when { padding-top: 0; }
     .pub { grid-template-columns: 1fr; }
@@ -184,17 +184,19 @@
   <header class="hero reveal">
     <div>
       <h1 class="name">Shichong <span class="alt">(Nio)</span> Peng</h1>
-      <p class="role">PhD Candidate · 3D Vision &amp; Learned Dynamics</p>
+      <p class="role">PhD Candidate · 3D Vision &amp; Neural Rendering</p>
       <div class="bio">
-        <p>I build <strong>learned neural simulators of dynamic visual content</strong> — explicit 3D
-        representations (neural point clouds, 3D Gaussians) reconstructed from real images and rolled
-        forward by learned dynamics models, so that captured scenes and subjects can be rendered,
-        edited, and animated rather than just replayed.</p>
-        <p>I'm a PhD candidate in Computer Science at <strong>Simon Fraser University</strong>, advised by
-        <a href="https://www.sfu.ca/~keli/">Ke Li</a>. Most recently I was a Research Scientist Intern with
-        Meta's <strong>Codec Avatars</strong> group; earlier in my PhD I worked on neural rendering and
-        the IMLE family of generative models. Most people call me Nio. I'm currently on the research
-        job market.</p>
+        <p>I build <strong>3D deep learning systems and neural renderers</strong>. My models reconstruct
+        explicit 3D structure — neural point clouds and 3D Gaussians — from real images, then predict how
+        it moves and deforms over time. What I care about is 3D that is both <strong>photorealistic and
+        editable</strong>: something you can render, animate, rig, and control, rather than just a
+        rendered video.</p>
+        <p>I'm a PhD candidate at <strong>Simon Fraser University</strong>, advised by
+        <a href="https://www.sfu.ca/~keli/">Ke Li</a>, finishing in 2026. Most recently I was a Research
+        Scientist Intern at <strong>Meta Reality Labs</strong> (Codec Avatars), where I built a
+        transformer-based dynamics model that makes loose clothing move naturally on full-body photoreal
+        avatars. Earlier in my PhD I worked on neural rendering (PAPR) and the IMLE family of generative
+        models. Most people call me Nio, and I'm on the research job market for 2026.</p>
       </div>
       <nav class="links">
         <a href="mailto:shichong_peng@sfu.ca">Email</a><span class="sep">/</span>
@@ -240,11 +242,11 @@
   const ME = "Shichong Peng";
 
   const NEWS = [
-    ["2026", `Two co-authored papers accepted to <b>ECCV 2026</b>.`],
-    ["2026", `<b>PAPR Up-close</b> accepted to <b>3DV 2026</b> — congrats to lead author Yanshu Zhang.`],
-    ["2025", `Completed a Research Scientist internship at <b>Meta Reality Labs</b> (Codec Avatars).`],
-    ["2024", `<b>PAPR in Motion</b> selected as a <b>CVPR 2024 Highlight</b>.`],
-    ["2023", `<b>PAPR</b> selected as a <b>NeurIPS 2023 Spotlight</b>.`],
+    ["Jul 2026", `Two co-authored papers accepted to <b>ECCV 2026</b> — congrats to Alireza Moazeni and Yanshu Zhang for leading them!`],
+    ["Dec 2025", `Completed a Research Scientist internship at <b>Meta Reality Labs</b> (Codec Avatars).`],
+    ["Oct 2025", `<b>PAPR Up-close</b> accepted to <b>3DV 2026</b> — congrats to Yanshu Zhang for leading it!`],
+    ["Apr 2024", `<b>PAPR in Motion</b> selected as a <b>CVPR 2024 Highlight</b>.`],
+    ["Sep 2023", `<b>PAPR</b> selected as a <b>NeurIPS 2023 Spotlight</b>.`],
   ];
 
   const PUBS = [
@@ -256,24 +258,22 @@
       links: [["Paper","https://arxiv.org/abs/2606.06685"]],
     },
     {
+      title: "Tackling Misattribution in 3D Intrinsic Decomposition via Proximity Attention Point Rendering",
+      authors: ["Alireza Moazeni",ME,"Yanshu Zhang","Chirag Vashist","Ke Li"],
+      venue: "ECCV 2026",
+      links: [["OpenReview","https://openreview.net/forum?id=p9U6bsNh0p"]],
+    },
+    {
+      title: "P-CORE: Self-Supervised Surface Consistency for Point-Based Neural Editing",
+      authors: ["Yanshu Zhang",ME,"Mehran Aghabozorgi","Alireza Moazeni","Ke Li"],
+      venue: "ECCV 2026",
+      links: [["OpenReview","https://openreview.net/forum?id=Dm0U9v7UPO"]],
+    },
+    {
       title: "PAPR Up-close: Close-up Neural Point Rendering without Holes",
       authors: ["Yanshu Zhang","Chirag Vashist",ME,"Ke Li"],
       venue: "3DV 2026",
       links: [["OpenReview","https://openreview.net/forum?id=dkyAX6jVJs"]],
-    },
-    // TODO: ECCV 2026 paper #1 — add the real title and full author list (you are 2nd author)
-    {
-      title: "ECCV 2026 paper — title TBD",
-      authors: ["First Author",ME,"Ke Li"],
-      venue: "ECCV 2026",
-      links: [["OpenReview","https://openreview.net/forum?id=p9U6bsNh0p"]],
-    },
-    // TODO: ECCV 2026 paper #2 — add the real title and full author list (you are 2nd author)
-    {
-      title: "ECCV 2026 paper — title TBD",
-      authors: ["First Author",ME,"Ke Li"],
-      venue: "ECCV 2026",
-      links: [["OpenReview","https://openreview.net/forum?id=Dm0U9v7UPO"]],
     },
     {
       title: "PAPR in Motion: Seamless Point-level 3D Scene Interpolation",
